@@ -19,6 +19,20 @@ function Navbar({
 	// };
 	
 	const location = useRouter();
+	
+	React.useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 1) {
+        (document.querySelector(".Navbar") as HTMLElement)!.style.height = "55px";
+      } else {
+				(document.querySelector(".Navbar") as HTMLElement)!.style.height = "70px";
+      }
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
+  });
 
 	return (
 		<nav className="Navbar">

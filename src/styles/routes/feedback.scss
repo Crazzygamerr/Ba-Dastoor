@@ -1,0 +1,72 @@
+.Feedback {
+	@include box(100vw, 100%);
+	@include make-flex(column);
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-top: 100px;
+	gap: 3rem;
+	
+	&__subHeading {
+		letter-spacing: 1px;
+	}
+	
+	&__container {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+	
+	&__box {
+		@include make-flex(column, left, center);
+		box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+		background-color: #ffffff;
+		padding: 20px;
+		margin: 15px;
+		gap: 20px;
+	}
+	
+	&__box-top {
+		@include make-flex(row, center, space-between);
+	}
+	
+	&__profile {
+		@include make-flex(row, center, space-between);
+		gap: 1rem;
+		
+		img {
+			width: 50px;
+			height: 50px;
+			object-fit: cover;
+			object-position: center;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		
+		.Feedback__user {
+			@include make-flex(column, left, center);
+		}
+		
+		strong {
+			color: #3d3d3d;
+			font-size: 1.1rem;
+			letter-spacing: 0.5px;
+		}
+		
+		span {
+			color: #979797;
+			font-size: 0.8rem;
+		}
+	}
+	
+	&__reviews {
+		color: #f9d71c;
+	}
+	
+	p {
+		font-size: 0.9rem;
+		color: #4b4b4b;
+	}
+	
+}
+
