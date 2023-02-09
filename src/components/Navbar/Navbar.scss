@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+.Navbar {
+  @include box(100vw, 100px);
+	@include make-flex(row, center, space-between);
+  padding: 16px 0;
+  overflow: hidden;
+  // font-family: "Inconsolata", monospace;
+	backdrop-filter: blur(50px);
+  z-index: 10;
+  transition: 0.2s;
+  position: fixed;
+  top: 0;
+	
+	&__logo {
+		height: 75px;
+		object-fit: contain;		
+	}
+	
+	&__links {
+		@include box(50%, 100%);
+		@include make-flex(row, center, space-evenly);
+		gap: 2rem;
+	}
+	
+	&__navLink {
+		background-color: #a3d4c3;
+		text-decoration: none;
+		font-size: 1.5rem;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 5px;
+		padding: 8px 32px;
+		color: #023620;
+		
+		&:hover, &--active {
+			background-color: #68b69a;
+			color: #000000;
+		}
+	}
+	
+	&__auth {
+		@include box(5%);
+	}
+
+}

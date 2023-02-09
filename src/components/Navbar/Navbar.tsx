@@ -1,10 +1,10 @@
 import React from "react";
-// import Logo from "../../public/Logo.svg";
+import Logo from "../../../public/Logo.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 // import { auth } from "../Config/Config";
-// import "./Navbar.module.scss";
+import "./Navbar.scss";
 
 function Navbar({
 	user,
@@ -21,93 +21,47 @@ function Navbar({
 	const location = useRouter();
 
 	return (
-		<div>
-			<div className="outer">
-				<div className="Navbar">
-					<div className="buttons">
-						<Link href="/">
-							{/* <Image src={Logo} alt="logo" className="img" /> */}
-						</Link>
-					</div>
-					<div className="buttons">
-						<Link href="/">
-							<button
-								// className={location.route === "/" ? "active" : "link1"}
-								className={`
-									
-								`}
-								id="abbb"
-							>
-								Home
-							</button>
-						</Link>
-						<Link href="shop">
-							<button
-								className={location.route === "/shop" ? "active" : "link1"}
-							>
-								Shop
-							</button>
-						</Link>
-
-						<Link href="blog">
-							<button
-								className={location.route === "/blog" ? "active" : "link1"}
-							>
-								Feedback
-							</button>
-						</Link>
-
-						<Link href="about">
-							<button
-								className={location.route === "/about" ? "active" : "link1"}
-							>
-								About
-							</button>
-						</Link>
-
-						<Link href="contact">
-							<button
-								className={
-									location.route === "/contact" ? "active" : "link1"
-								}
-							>
-								{" "}
-								Contact
-							</button>
-						</Link>
-					</div>
-					<div className="right">
-						{!user && (
-							<div className="buttons">
-								<Link href="login" className="link">
-									<button className="auth"> LOGIN </button>
-								</Link>
-							</div>
-						)}
-					</div>
-
-					{user && (
-						<div className="login">
-							<div>
-								<Link className="navlink" href="/">
-									<span className="wave">👋</span> {user}
-								</Link>
-							</div>
-							<div>
-								<Link href="cart">
-									{/* <Icon icon={shoppingCart} size={20} /> */}
-									Icon**
-								</Link>
-								{/* <span className="cart-indicator">{totalQty}</span>*/}
-							</div>
-							<div
-								// onClick={handleLogout}
-							>Log Out</div>
-						</div>
-					)}
-				</div>
+		<nav className="Navbar">
+			<Link href="/">
+				<Image src={Logo} alt="logo" className="Navbar__logo" />
+			</Link>
+			<div className="Navbar__links">
+				<Link
+					href="/"
+					className={`
+						Navbar__navLink 
+						${location.pathname === "/" ? "Navbar__navLink--active" : ""}
+					`}>
+					Home
+				</Link>
+				<Link
+					href="/shop"
+					className={`
+						Navbar__navLink
+						${location.pathname === "/shop" ? "Navbar__navLink--active" : ""}
+					`}>
+					Shop
+				</Link>
+				<Link
+					href="/feedback"
+					className={`
+						Navbar__navLink
+						${location.pathname === "/feedback" ? "Navbar__navLink--active" : ""}
+					`}>
+					Feedback
+				</Link>
+				<Link
+					href="/about"
+					className={`
+						Navbar__navLink
+						${location.pathname === "/about" ? "Navbar__navLink--active" : ""}
+					`}>
+					About
+				</Link>
 			</div>
-		</div>
+			<div className="Navbar__auth">
+			</div>
+		</nav>
 	);
 }
 

@@ -2,13 +2,17 @@ import { useState } from "react";
 // import { auth, fs } from "../Config/Config";
 // import "../styles/routes/index.scss";
 import Image from "next/image";
+import Navbar from "@/components/Navbar/Navbar";
+import Link from "next/link";
 import P1 from "../../public/1.png";
 import P2 from "../../public/2.png";
 import P3 from "../../public/3.png";
 import Butterflies from "../../public/Butterflies.svg";
 import V1 from "../../public/V1.png";
 import V2 from "../../public/V2.png";
-import styles from "../styles/routes/index.module.scss";
+import rightArrow from "../../public/right-arrow.svg";
+
+import "../styles/routes/index.scss";
 
 function Home({
 	props,
@@ -54,7 +58,7 @@ function Home({
 	// console.log(user)
 
 	//state of products
-	const [products, setProducts] = useState([]);
+	// const [products, setProducts] = useState([]);
 
 	//Getting products function
 	// const getProducts = async () => {
@@ -79,47 +83,79 @@ function Home({
 	// }, []);
 
 	return (
-		<div className={styles.page}>
-			{/* <Navbar user={null} /> */}
-			<div className={styles.hero}>
-				<div className={styles.leftSide}>
-					<div>
+		<div className="Landing">
+			<Navbar user={null} />
+			<div className="Landing__hero">
+				<Image
+					alt=""
+					loading="lazy"
+					src={Butterflies}
+					className="Landing__heroImage"
+				/>
+				<div className="Landing__heroRight">
+					<h1 className="heroTitle">
+						BaDastoor
+					</h1>
+					<h3 className="Landing__heroSubtitle">
+						The Brand of Nature
+					</h3>
+					<Link
+						href="/shop"
+						className="Landing__shopNow"
+					>
+						<p>Shop Now</p>
 						<Image
-							src={Butterflies}
 							alt=""
-							height={400}
-							className={styles.svgImg}
+							loading="lazy"
+							src={rightArrow}
+							className="rightArrow"
+						/>
+					</Link>
+				</div>
+			</div>
+
+			<div className="Landing__productSection">
+				<Image src={P1} alt="discount" className="Landing__product" />
+				<Image src={P2} alt="discount" className="Landing__product" />
+				<Image src={P3} alt="discount" className="Landing__product" />
+				<div className="Landing__card">
+					<h3 className="yourText">
+						A one spot destination for all the natural products for you!!
+					</h3>
+					<p className="smText">Are you excited?</p>
+					<button className="shopNow">Find out More</button>
+				</div>
+			</div>
+			
+			<div className="Landing__contact">
+				<form className="form">
+					<div className="title">Contact Team</div>
+					<div className="subtitle">How can we help you?</div>
+					<div className="input-container ic1">
+						<input id="firstname" className="input" type="text" placeholder="Name" />
+					</div>
+					<div className="input-container ic2">
+						<input id="lastname" className="input" type="text" placeholder="Email " />
+					</div>
+					<div className="input-container ic2">
+						<input
+							id="Message"
+							className="input"
+							type="text"
+							placeholder="Message "
 						/>
 					</div>
-					<div className={styles.title}>The Brand of Nature</div>
-					<div className={styles.butn}>
-						<a href="#page2">
-							<button className={styles.shopNow}>Shop Now</button>
-						</a>
-					</div>
-				</div>
+					<button type="submit" className="submit">
+						submit
+					</button>{" "}
+				</form>
 			</div>
-
-			<div className={styles.rightSide}>
-				<Image src={V1} alt="discount" height={400} className={styles.photo} />
-				<Image src={V2} alt="discount" height={400} className={styles.photo} />
-			</div>
-
-			<div className={styles.page2}>
-				<div className={styles.lSide}>
-					<h1 className={styles.yourText}>
-						A one spot destination for all the natural products for you!!
-					</h1>
-					<p className={styles.smText}>Are you excited?</p>
-					<button className={styles.shopNow}>Find out More</button>
-				</div>
-				<div className={styles.rSide}>
-					<Image src={P1} alt="discount" height={400} className={styles.photo2} />
-					<Image src={P2} alt="discount" height={400} className={styles.photo2} />
-					<Image src={P3} alt="discount" height={400} className={styles.photo2} />
-				</div>
-			</div>
-
+			
+			{/* <div className="rightSide">
+				<Image src={V1} alt="discount" height={400} className="photo" />
+				<Image src={V2} alt="discount" height={400} className="photo" />
+			</div> */}
+			
 			{/* <Footer /> */}
 		</div>
 	);
