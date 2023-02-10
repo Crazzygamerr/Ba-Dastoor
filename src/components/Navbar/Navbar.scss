@@ -1,11 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
-
 .Navbar {
   @include box(100vw, 70px);
 	@include make-flex(row, center, space-between);
   padding: 16px 0;
   overflow: hidden;
-  // font-family: "Inconsolata", monospace;
 	backdrop-filter: blur(50px);
   z-index: 10;
   transition: 0.2s;

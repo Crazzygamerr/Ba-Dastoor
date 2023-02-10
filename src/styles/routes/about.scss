@@ -1,0 +1,79 @@
+.About {
+	@include box(100vw, 100%);
+	@include make-flex(column);
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-top: 130px;
+	gap: 4rem;
+	
+	&__heading {
+		font-size: 3rem;
+	}
+	
+	&__intro {
+		@include box(fit-content, 100%);
+		@include make-flex(row, center, space-evenly);
+		padding: 0 4rem;
+		gap: 4rem;
+	}
+	
+	&__image {
+		height: 400px;
+		width: fit-content;
+		border-radius: 10px;
+	}
+	
+	&__text {
+		width: 55%;
+		font-size: 1rem;
+		text-align: right;
+		margin: auto;
+	}
+	
+	&__subHeading {
+		font-size: 2rem;
+	}
+	
+	&__teamDesc {
+		@include box(fit-content, 100%);
+		@include make-flex(row, center, space-evenly);
+		padding: 0 4rem;
+		gap: 4rem;
+	}
+	
+	&__teamImage {
+		height: 300px;
+		width: fit-content;
+		border-radius: 10px;
+	}
+	
+	&__teamText {
+		width: 50%;
+		font-size: 1.2rem;
+		text-align: center;
+		margin: auto;
+	}
+	
+	&__members {
+		@include box(90%, 100%);
+		@include make-flex(row, center, space-evenly);
+		flex-wrap: wrap;
+		gap: 3rem;
+		font-size: 12px;
+	}
+	
+	&__member {
+		@include box(fit-content, 100%);
+		@include make-flex(column, center, center);
+		gap: 1rem;
+		text-align: center;
+		font-size: 1.1rem;
+	}
+	
+	&__memberImg {
+		height: 200px;
+		width: 200px;
+		border-radius: 10px;
+		object-fit: cover;
+	}
+}

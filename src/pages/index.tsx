@@ -4,21 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Link from "next/link";
-import P1 from "../../public/1.png";
-import P2 from "../../public/2.png";
-import P3 from "../../public/3.png";
+import P1 from "../../public/product1.jpeg";
+import P2 from "../../public/product2.jpeg";
+import P3 from "../../public/product3.jpeg";
 import Butterflies from "../../public/Butterflies.svg";
 import V1 from "../../public/V1.png";
 import V2 from "../../public/V2.png";
 import rightArrow from "../../public/right-arrow.svg";
-
 import "../styles/routes/index.scss";
+import Head from "next/head";
 
-function Home({
-	props,
-}: {
-	props: any;
-}): JSX.Element {
+function Home({ props, }: { props: any }): JSX.Element {
+	
 
 	// function GetUserUid() {
 	//   const [uid, setUid] = useState(null);
@@ -84,6 +81,9 @@ function Home({
 
 	return (
 		<div className="Landing">
+			<Head>
+				<title>Ba-Dastoor</title>
+			</Head>
 			<Navbar user={null} />
 			<div className="Landing__hero">
 				<Image
@@ -115,15 +115,14 @@ function Home({
 			</div>
 
 			<div className="Landing__productSection">
-				<Image src={P1} alt="discount" className="Landing__product" />
 				<Image src={P2} alt="discount" className="Landing__product" />
+				<Image src={P1} alt="discount" className="Landing__product" />
 				<Image src={P3} alt="discount" className="Landing__product" />
 				<div className="Landing__card">
-					<h3 className="yourText">
-						A one spot destination for all the natural products for you!!
+					<h3 className="Landing__cardText">
+						A one spot destination for all your natural products
 					</h3>
-					<p className="smText">Are you excited?</p>
-					<button className="shopNow">Find out More</button>
+					<Link href="/shop" className="Landing__cardButton">Find out More</Link>
 				</div>
 			</div>
 			

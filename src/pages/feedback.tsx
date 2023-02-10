@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 // import Footer from "../components/Footer";
 import Image from "next/image";
+import Head from "next/head";
 import "../styles/routes/feedback.scss";
 
 export default function Feedback() {
@@ -39,6 +40,9 @@ export default function Feedback() {
 	
   return (
     <div className="Feedback">
+			<Head>
+				<title>Ba-Dastoor</title>
+			</Head>
       <Navbar user={null} />
       <h1 className="Feedback__subHeading">Our Top Reviews</h1>
 			<div className="Feedback__container">

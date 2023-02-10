@@ -1,8 +1,52 @@
-.shop {
+.Shop {
 	@include box(100vw, 100vh);
 	@include make-flex(column);
 	overflow-y: auto;
 	overflow-x: hidden;
 	
-	
+	&__Container {
+		height: 350px;
+		width: 250px;
+		padding: 10px;
+		margin: 40px 0;
+		background-color: #a3d4c3;
+	}
+	&__Image {
+		width: 230px;
+		height: 230px;
+	}
+
+	&__name {
+		margin: 2px 0 0 0;
+	}
+	&__pname {
+		height: 40px;
+	}
+	h1 {
+		font-size: 17px;
+	}
+	h2 {
+		font-size: 8px;
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__b1 {
+		border: 1px solid green;
+		justify-content: center;
+		height: 30px;
+		width: auto;
+		font-size: 10px;
+	}
+	&__desc {
+		margin: 5px 10px;
+	}
+
+	&__outer {
+		justify-content: center;
+		align-items: center;
+	}
 }
