@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 // import { fs } from "../Config";
 import Image from "next/image";
-import Navbar from "../components/Navbar/Navbar";
 import Head from "next/head";
 
 export default function Shop() {
@@ -31,7 +30,6 @@ export default function Shop() {
 			<Head>
 				<title>Ba-Dastoor</title>
 			</Head>
-			<Navbar user={null} />
 			{products.map((product: any) => {
 				<div className="Shop__Container">
 					<Image src={product.url} alt="product-image" className="Shop__Image" />

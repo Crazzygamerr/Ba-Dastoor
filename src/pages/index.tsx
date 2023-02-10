@@ -1,7 +1,6 @@
 import { useState } from "react";
 // import { auth, fs } from "../Config/Config";
 import Image from "next/image";
-import Navbar from "@/components/Navbar/Navbar";
 import Link from "next/link";
 import P1 from "../../public/product1.jpeg";
 import P2 from "../../public/product2.jpeg";
@@ -82,7 +81,6 @@ function Home({ props, }: { props: any }): JSX.Element {
 			<Head>
 				<title>Ba-Dastoor</title>
 			</Head>
-			<Navbar user={null} />
 			<div className="Landing__hero">
 				<Image
 					alt=""
@@ -91,7 +89,7 @@ function Home({ props, }: { props: any }): JSX.Element {
 					className="Landing__heroImage"
 				/>
 				<div className="Landing__heroRight">
-					<h1 className="heroTitle">
+					<h1 className="Landing__heroTitle">
 						BaDastoor
 					</h1>
 					<h3 className="Landing__heroSubtitle">
@@ -146,8 +144,6 @@ function Home({ props, }: { props: any }): JSX.Element {
 				<Image src={V1} alt="discount" height={400} className="photo" />
 				<Image src={V2} alt="discount" height={400} className="photo" />
 			</div> */}
-			
-			{/* <Footer /> */}
 		</div>
 	);
 }

@@ -1,6 +1,7 @@
 .Feedback {
 	@include box(100vw, 100%);
-	@include make-flex(column);
+	min-height: 100vh;
+	@include make-flex(column, center, flex-start);
 	overflow-y: auto;
 	overflow-x: hidden;
 	margin-top: 100px;

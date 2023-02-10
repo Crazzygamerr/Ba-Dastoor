@@ -1,0 +1,22 @@
+.Footer {
+	@include box(100%, 100px);
+	@include make-flex(row, center, space-between);
+	padding: 0 5%;
+	box-sizing: border-box;
+	background-color: #2b825d;
+	
+	h1 {
+		color: #fff;
+	}
+	
+	&__links {
+		@include box(30%, 100%);
+		@include make-flex(row, center, space-evenly);
+		gap: 2rem;
+	}
+	
+	a {
+		height: 30px;
+	}
+	
+}

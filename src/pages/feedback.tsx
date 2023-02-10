@@ -1,6 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-// import Footer from "../components/Footer";
 import Image from "next/image";
 import Head from "next/head";
 import "../styles/routes/feedback.scss";
@@ -43,7 +41,6 @@ export default function Feedback() {
 			<Head>
 				<title>Ba-Dastoor</title>
 			</Head>
-      <Navbar user={null} />
       <h1 className="Feedback__subHeading">Our Top Reviews</h1>
 			<div className="Feedback__container">
 				{feedback.map((item, index) => (
@@ -71,7 +68,6 @@ export default function Feedback() {
 					</div>
 				))}
 			</div>
-      {/* <Footer /> */}
     </div>
   );
 }

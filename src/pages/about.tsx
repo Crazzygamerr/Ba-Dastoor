@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar/Navbar";
 // import { auth, fs } from "../Config/Config";
 import "../styles/routes/about.scss";
-// import Footer from "../components/Footer";
 import P4 from "../../public/4.png";
 import P5 from "../../public/5.jpeg";
 import Vani from "../../public/Vani.png";
@@ -71,7 +69,6 @@ export default function About() {
 			<Head>
 				<title>Ba-Dastoor</title>
 			</Head>
-      <Navbar user={null} />
       <h1 className="About__heading">What&apos;s BaDastoor?</h1>
       <div className="About__intro">
 				<Image src={P4} alt="" className="About__image" />
@@ -129,7 +126,6 @@ export default function About() {
 					</div>
 				))}
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
