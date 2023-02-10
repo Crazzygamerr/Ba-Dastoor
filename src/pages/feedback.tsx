@@ -50,11 +50,13 @@ export default function Feedback() {
 					<div className="Feedback__box" key={index}>
 						<div className="Feedback__box-top">
 							<div className="Feedback__profile">
-								<img
+								<Image
 									src={item.img}
 									alt=""
 									width={10}
 									height={10}
+									loading="lazy"
+									unoptimized={true}
 								/>
 								<div className="Feedback__user">
 									<strong>{item.name}</strong>

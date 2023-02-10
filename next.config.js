@@ -24,13 +24,13 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'firebasestorage.googleapis.com',
-				pathname: '/v0/b/badastoor-86ddb.appspot.com/o',
+				pathname: '/v0/b/badastoor-86ddb.appspot.com/o/**',
 				port: '',
 			},
 			{
 				protocol: 'https',
 				hostname: 'cdn-icons-png.flaticon.com',
-				pathname: '/512',
+				pathname: '/512/**',
 				port: '',
 			}
 		]

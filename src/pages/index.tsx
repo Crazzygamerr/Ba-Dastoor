@@ -1,6 +1,5 @@
 import { useState } from "react";
 // import { auth, fs } from "../Config/Config";
-// import "../styles/routes/index.scss";
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Link from "next/link";
@@ -8,8 +7,7 @@ import P1 from "../../public/product1.jpeg";
 import P2 from "../../public/product2.jpeg";
 import P3 from "../../public/product3.jpeg";
 import Butterflies from "../../public/Butterflies.svg";
-import V1 from "../../public/V1.png";
-import V2 from "../../public/V2.png";
+import Hands from "../../public/Hands.svg";
 import rightArrow from "../../public/right-arrow.svg";
 import "../styles/routes/index.scss";
 import Head from "next/head";
@@ -113,7 +111,7 @@ function Home({ props, }: { props: any }): JSX.Element {
 					</Link>
 				</div>
 			</div>
-
+			
 			<div className="Landing__productSection">
 				<Image src={P2} alt="discount" className="Landing__product" />
 				<Image src={P1} alt="discount" className="Landing__product" />
@@ -127,27 +125,21 @@ function Home({ props, }: { props: any }): JSX.Element {
 			</div>
 			
 			<div className="Landing__contact">
-				<form className="form">
-					<div className="title">Contact Team</div>
-					<div className="subtitle">How can we help you?</div>
-					<div className="input-container ic1">
-						<input id="firstname" className="input" type="text" placeholder="Name" />
-					</div>
-					<div className="input-container ic2">
-						<input id="lastname" className="input" type="text" placeholder="Email " />
-					</div>
-					<div className="input-container ic2">
-						<input
-							id="Message"
-							className="input"
-							type="text"
-							placeholder="Message "
-						/>
-					</div>
-					<button type="submit" className="submit">
-						submit
-					</button>{" "}
+				<form className="Landing__form">
+					<h3 className="Landing__title">Contact Us</h3>
+					<p className="Landing__subtitle">How can we help you?</p>
+					<input type="text" placeholder="Name" />
+					<input type="text" placeholder="Email " />
+					<input type="text" placeholder="Message " />
+					<button type="submit" className="Landing__submit">
+						Submit
+					</button>
 				</form>
+				<Image
+					src={Hands}
+					alt=""
+					className="Landing__contactImage"
+				/>
 			</div>
 			
 			{/* <div className="rightSide">
