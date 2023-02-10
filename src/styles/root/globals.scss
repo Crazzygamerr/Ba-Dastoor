@@ -17,3 +17,18 @@ body {
 h1, h2, h3, h4, h5, p {
 	margin: 0;
 }
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+	background: #a2a1a1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

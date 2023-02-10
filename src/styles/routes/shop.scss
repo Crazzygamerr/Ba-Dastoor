@@ -1,52 +1,118 @@
 .Shop {
-	@include box(100vw, 100vh);
-	@include make-flex(column);
-	overflow-y: auto;
+	@include box(100vw, 100%);
+	min-height: 100vh;
+	// @include make-flex(column, center, flex-start);
 	overflow-x: hidden;
+	margin: 150px 0 100px 0;
 	
-	&__Container {
-		height: 350px;
-		width: 250px;
+	&__products {
+		@include box(100%, fit-content);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		padding: 0 4rem;
+		gap: 2rem;
+		box-sizing: border-box;
+		
+		@include respondAt(1380px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include respondAt(950px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		@include respondAt(600px) {
+			padding: 0 1rem;
+			gap: 1rem;
+		}
+	}
+	
+	&__container {
+		@include box(100%, 100%);
+		max-width: 600px;
+		@include make-flex(column, center, space-between);
+		gap: 2rem;
 		padding: 10px;
-		margin: 40px 0;
-		background-color: #a3d4c3;
+		border-radius: 10px;
+		background-color: #fff;
+		box-sizing: border-box;
+		
+		@include respondAt(600px) {
+			gap: 1rem;
+		}
 	}
-	&__Image {
-		width: 230px;
-		height: 230px;
+	
+	&__mainListing {
+		@include box(100%, 200px);
+		@include make-flex(row, flex-start, space-evenly);
+		gap: 2rem;
+		
+		@include respondAt(600px) {
+			@include box(100%, 150px);
+			gap: 10px;
+		}
 	}
-
-	&__name {
-		margin: 2px 0 0 0;
+	
+	img {
+		min-width: 200px;
+		min-height: 200px;
+		background-color: #e0e0e0;
+		border-radius: 10px;
+		object-fit: contain;
+		
+		@include respondAt(600px) {
+			min-height: 0;
+			min-width: 120px;
+			max-height: 120px;
+		}
 	}
-	&__pname {
-		height: 40px;
-	}
-	h1 {
-		font-size: 17px;
-	}
-	h2 {
-		font-size: 8px;
+	
+	&__text {
+		@include box(100%, 100%);
+		@include make-flex(column, flex-start, flex-start);
+		gap: 1rem;
+		
+		h4 {
+			font-size: 1rem;
+			font-weight: 500;
+		}
+		
+		p {
+			font-size: 1rem;
+			overflow-y: auto;
+			
+			@include respondAt(600px) {
+				font-size: 0.8rem;
+			}
+		}
 	}
 
 	&__bottom {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		@include box(90%, fit-content);
+		@include make-flex(row, center, space-between);
+		gap: 3rem;
+		padding-bottom: 1rem;
+		
+		h3 {
+			font-size: 2rem;
+			font-weight: 500;
+			
+			@include respondAt(600px) {
+				font-size: 1.5rem;
+			}
+		}
+		
+		@include respondAt(600px) {
+			padding-bottom: 0;
+		}
 	}
-	&__b1 {
+	
+	&__addButton {
+		@include box(50%, 3rem);
+		background-color: transparent;
 		border: 1px solid green;
-		justify-content: center;
-		height: 30px;
-		width: auto;
-		font-size: 10px;
-	}
-	&__desc {
-		margin: 5px 10px;
-	}
-
-	&__outer {
-		justify-content: center;
-		align-items: center;
+		border-radius: 40px;
+		
+		@include respondAt(600px) {
+			@include box(40%, 2rem);
+		}
 	}
 }
