@@ -10,8 +10,9 @@ import Hands from "../../public/Hands.svg";
 import rightArrow from "../../public/right-arrow.svg";
 import "../styles/routes/index.scss";
 import Head from "next/head";
+import { NextPage } from "next";
 
-function Home(): JSX.Element {
+const Home: NextPage = () => {
 	
 	return (
 		<div className="Landing">

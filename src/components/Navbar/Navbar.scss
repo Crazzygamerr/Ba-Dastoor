@@ -17,7 +17,7 @@
 	&__links {
 		@include box(50%, 100%);
 		@include make-flex(row, center, space-evenly);
-		gap: 2rem;
+		gap: 1.5rem;
 	}
 	
 	&__navLink {
@@ -36,7 +36,18 @@
 	}
 	
 	&__auth {
-		@include box(5%);
+		@include box(fit-content, 100%);
+		@include make-flex(row, center, space-evenly);
+		margin-right: 2rem;
+		gap: 3rem;
+	}
+	
+	&__authBtn {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		font-size: 1.5rem;
+		
 	}
 
 }

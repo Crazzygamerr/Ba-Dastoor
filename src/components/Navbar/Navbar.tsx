@@ -3,22 +3,18 @@ import Logo from "../../../public/Logo.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-// import { auth } from "../Config/Config";
+import { signIn, signOut, useSession } from "next-auth/react";
 import "./Navbar.scss";
+import Cart from "../../../public/shopping_cart_black_24dp.svg";
 
 function Navbar({
 	user,
 } : {
 	user: any,
 }): JSX.Element {
-
-	// const handleLogout = () => {
-	//   auth.signOut().then(() => {
-	//     history.push("/login");
-	//   });
-	// };
 	
 	const location = useRouter();
+	const { data: session } = useSession();
 	
 	React.useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -37,7 +33,11 @@ function Navbar({
 	return (
 		<nav className="Navbar">
 			<Link href="/">
-				<Image src={Logo} alt="logo" className="Navbar__logo" />
+				<Image
+					src={Logo}
+					alt="logo"
+					className="Navbar__logo"
+				/>
 			</Link>
 			<div className="Navbar__links">
 				<Link
@@ -74,6 +74,26 @@ function Navbar({
 				</Link>
 			</div>
 			<div className="Navbar__auth">
+				{session ? (
+					<Image
+						alt=""
+						loading="lazy"
+						src={Cart}
+						className="Navbar__cart"
+					/>
+				) : null}
+				<button
+					className="Navbar__authBtn"
+					onClick={() => {
+						if (session) {
+							signOut({ callbackUrl: "/" });
+						} else {
+							signIn("google", { callbackUrl: "/" });
+						}	
+					}}
+				>
+					{ session ? "Logout" : "Login" }
+				</button>
 			</div>
 		</nav>
 	);
