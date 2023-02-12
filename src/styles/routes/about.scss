@@ -1,10 +1,10 @@
 .About {
-	@include box(100vw, 100%);
+	@include box(100%, 100%);
+	max-width: 1200px;
 	@include make-flex(column);
 	overflow-y: auto;
 	overflow-x: hidden;
-	margin-top: 130px;
-	margin-bottom: 100px;
+	margin: 130px auto 100px auto;
 	gap: 4rem;
 	
 	&__heading {
@@ -27,7 +27,7 @@
 	&__text {
 		width: 55%;
 		font-size: 1rem;
-		text-align: right;
+		text-align: left;
 		margin: auto;
 	}
 	
@@ -37,7 +37,7 @@
 	
 	&__teamDesc {
 		@include box(fit-content, 100%);
-		@include make-flex(row, center, space-evenly);
+		@include make-flex(row, flex-start, space-evenly);
 		padding: 0 4rem;
 		gap: 4rem;
 	}
@@ -45,14 +45,14 @@
 	&__teamImage {
 		height: 300px;
 		width: fit-content;
-		border-radius: 10px;
+		border-radius: 20px;
 	}
 	
 	&__teamText {
 		width: 50%;
 		font-size: 1.2rem;
-		text-align: center;
-		margin: auto;
+		text-align: left;
+		margin: 0 auto;
 	}
 	
 	&__members {

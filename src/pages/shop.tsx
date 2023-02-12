@@ -33,7 +33,6 @@ export async function getServerSideProps() {
 		productsArray.push({
 			...data as ProductItem,
 		});
-		console.log(data);
 	});
 	
 	return {

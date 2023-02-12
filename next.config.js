@@ -8,7 +8,7 @@ const nextConfig = {
 			const { oneOf } = rule;
 			if (oneOf) {
 				oneOf.forEach((one) => {
-					if (!`${one.issuer?.and}`.includes("_app")) return;
+					if (!`${one.issuer?.and}`.includes('_app')) return;
 					one.issuer.and = [path.resolve(__dirname)];
 				});
 			}
@@ -17,7 +17,7 @@ const nextConfig = {
 	},
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'src/styles')],
-		additionalData: `@import "src/styles/root/_mixins.scss";`,
+		additionalData: `@import 'src/styles/root/_mixins.scss';`,
 	},
 	images: {
 		remotePatterns: [
@@ -31,6 +31,12 @@ const nextConfig = {
 				protocol: 'https',
 				hostname: 'cdn-icons-png.flaticon.com',
 				pathname: '/512/**',
+				port: '',
+			},
+			{
+				protocol: 'https',
+				hostname: 'lh3.googleusercontent.com',
+				pathname: '/a/**',
 				port: '',
 			}
 		]

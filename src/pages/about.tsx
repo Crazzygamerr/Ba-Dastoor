@@ -97,7 +97,7 @@ export default function About() {
 				</p>
       </div>
 			<h1 className="About__subHeading">About Us</h1>
-      <div className="About__teamDesc">
+			<div className="About__teamDesc">
 				<p className="About__teamText">
 					An initiative to make small business grow. We are a social
 					enterprise with the purpose of aiding small businesses, with a

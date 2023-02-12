@@ -2,7 +2,7 @@
   @include box(100vw, 70px);
 	@include make-flex(row, center, space-between);
   padding: 16px 0;
-  overflow: hidden;
+  // overflow: hidden;
 	backdrop-filter: blur(50px);
   z-index: 10;
   transition: 0.2s;
@@ -22,15 +22,16 @@
 	
 	&__navLink {
 		text-decoration: none;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		margin: 4px 2px;
 		cursor: pointer;
 		border-radius: 5px;
 		padding: 8px 32px;
 		color: #023620;
+		opacity: 0.6;
 		
 		&:hover, &--active {
-			text-decoration: underline;
+			opacity: 1;
 			color: #000000;
 		}
 	}
@@ -42,12 +43,53 @@
 		gap: 3rem;
 	}
 	
+	&__user {
+		border-radius: 50%;
+	}
+	
+	&__dropdown {
+		@include box(fit-content, fit-content);
+		@include make-flex(column, center, flex-start);
+		position: absolute;
+		top: 80px;
+		right: 20px;
+		
+		background-color: #ffffff;
+		border-radius: 10px;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+		transition: all 0.2s ease-in-out;
+		z-index: 10;
+		display: none;
+		
+		&--active {
+			display: flex;
+		}
+		
+		p {
+			padding: 1rem;
+			font-size: 1.5rem;
+			margin: 0;
+		}
+		
+		button {
+			width: 100%;
+			padding: 0.5rem 0;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			border-top: 1px solid #b5b5b5;
+			font-size: 1.5rem;
+		}
+	}
+	
 	&__authBtn {
+		@include box(fit-content, fit-content);
+		padding: 0.5rem 1rem;
+		border-radius: 5px;
+		border: 1px solid #023620;
 		background-color: transparent;
-		border: none;
 		cursor: pointer;
 		font-size: 1.5rem;
-		
 	}
 
 }

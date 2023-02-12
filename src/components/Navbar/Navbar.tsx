@@ -13,8 +13,9 @@ function Navbar({
 	user: any,
 }): JSX.Element {
 	
-	const location = useRouter();
+	const router = useRouter();
 	const { data: session } = useSession();
+	const [open, setOpen] = React.useState(false);
 	
 	React.useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -44,7 +45,7 @@ function Navbar({
 					href="/"
 					className={`
 						Navbar__navLink 
-						${location.pathname === "/" ? "Navbar__navLink--active" : ""}
+						${router.pathname === "/" ? "Navbar__navLink--active" : ""}
 					`}>
 					Home
 				</Link>
@@ -52,7 +53,7 @@ function Navbar({
 					href="/shop"
 					className={`
 						Navbar__navLink
-						${location.pathname === "/shop" ? "Navbar__navLink--active" : ""}
+						${router.pathname === "/shop" ? "Navbar__navLink--active" : ""}
 					`}>
 					Shop
 				</Link>
@@ -60,7 +61,7 @@ function Navbar({
 					href="/feedback"
 					className={`
 						Navbar__navLink
-						${location.pathname === "/feedback" ? "Navbar__navLink--active" : ""}
+						${router.pathname === "/feedback" ? "Navbar__navLink--active" : ""}
 					`}>
 					Feedback
 				</Link>
@@ -68,32 +69,45 @@ function Navbar({
 					href="/about"
 					className={`
 						Navbar__navLink
-						${location.pathname === "/about" ? "Navbar__navLink--active" : ""}
+						${router.pathname === "/about" ? "Navbar__navLink--active" : ""}
 					`}>
 					About
 				</Link>
 			</div>
 			<div className="Navbar__auth">
 				{session ? (
-					<Image
-						alt=""
-						loading="lazy"
-						src={Cart}
-						className="Navbar__cart"
-					/>
-				) : null}
-				<button
-					className="Navbar__authBtn"
-					onClick={() => {
-						if (session) {
-							signOut({ callbackUrl: "/" });
-						} else {
-							signIn("google", { callbackUrl: "/" });
-						}	
-					}}
-				>
-					{ session ? "Logout" : "Login" }
-				</button>
+					<>
+						<Image
+							alt=""
+							loading="lazy"
+							src={Cart}
+							className="Navbar__cart"
+						/>
+						<Image
+							alt=""
+							loading="lazy"
+							width={40}
+							height={40}
+							src={session.user?.image ?? ""}
+							className="Navbar__user"
+							onClick={() => setOpen(!open)}
+						/>
+						<div className={`
+							Navbar__dropdown ${open ? "Navbar__dropdown--active" : ""}
+						`}>
+							<p>{session.user?.name}</p>
+							<div></div>
+							<button onClick={() => signOut({callbackUrl: '/'})}>Logout</button>
+						</div>
+					</>
+				) : (
+					<button
+						className="Navbar__authBtn"
+						onClick={() => signIn("google", { callbackUrl: "/" })}
+					>
+					Login
+					</button>
+				)}
 			</div>
 		</nav>
 	);
