@@ -31,7 +31,7 @@ export default function About() {
 			style: { objectPosition: "bottom"}
 		},
 		{
-			name: "Ananya Singh",
+			name: "Ananya Bhatnagar",
 			designation: "COO",
 			image: Ananya,
 			href: "/ananya.jpeg",
@@ -50,7 +50,7 @@ export default function About() {
 			href: "/amogh.jpg"
 		},
 		{
-			name: "Aniruddh Karpad",
+			name: "Aniruddh Kurpad",
 			designation: "CPO",
 			image: Anirudh,
 			href: "/aniruddh.jpeg"

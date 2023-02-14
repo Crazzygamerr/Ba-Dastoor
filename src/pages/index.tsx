@@ -54,7 +54,7 @@ const Home: NextPage = () => {
 				<Image src={P3} alt="discount" className="Landing__product" />
 				<div className="Landing__card">
 					<h3 className="Landing__cardText">
-						A one spot destination for all your natural products
+						A one stop destination for all your natural product needs
 					</h3>
 					<Link href="/shop" className="Landing__cardButton">Find out More</Link>
 				</div>
