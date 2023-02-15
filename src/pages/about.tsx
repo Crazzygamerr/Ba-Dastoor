@@ -4,11 +4,11 @@ import "../styles/routes/about.scss";
 import P4 from "../../public/4.png";
 import P5 from "../../public/5.jpeg";
 import Vani from "../../public/Vani.png";
-import Ria from "../../public/ria.jpeg";
+import Ria from "../../public/ria.jpg";
 import Amogh from "../../public/amogh.jpg";
 import Ananya from "../../public/ananya.jpeg";
 import Anirudh from "../../public/aniruddh.jpeg";
-import Ashna from "../../public/ashna.jpeg";
+import Ashna from "../../public/ashna.jpg";
 import Image, { StaticImageData } from "next/image";
 import Head from "next/head";
 
@@ -28,14 +28,14 @@ export default function About() {
 			designation: "CMO",
 			image: Ashna,
 			href: "/ashna.jpeg",
-			style: { objectPosition: "bottom"}
+			style: { objectFit: "contain" }
 		},
 		{
 			name: "Ananya Bhatnagar",
 			designation: "COO",
 			image: Ananya,
 			href: "/ananya.jpeg",
-			style: { objectPosition: "top"}
+			style: { objectFit: "contain" }
 		},
 		{
 			name: "Ria Kachhal",
