@@ -73,39 +73,27 @@ export default function About() {
       <div className="About__intro">
 				<Image src={P4} alt="" className="About__image" />
 				<p className="About__text">
-					Self-care, particularly skin care, has also become an important
-					component of people&apos;s lifestyles as more and more people become
-					aware of the importance of skin and body health. We understand how
-					important it is for individuals to use products that are free of
-					hazardous chemicals on their skin, thus we provide cruelty-free
-					goods devoid of synthetic scents. Furthermore, during the lockdown,
-					a slew of little companies sprung up, and people reacted positively
-					to them, investigating their offerings and purchasing from them
-					instead of their normal established enterprises.
-				{/* </p>
-				<p className="About__text"> */}
+					<i>“The greatest threat to our planet is the belief that someone else will fix it.” -Robert Swan</i>
 					<br /><br />
-					Small enterprises are recognised for offering low-cost items because
-					the majority of them are home-grown and do not require expensive
-					inputs.
-					We want to highlight the environmentally conscious small enterprises
-					that have emerged from rural regions. These folks are unable to
-					access metro cities for a variety of reasons. This will also be our
-					contribution to the Made in India programme, which encourages rural
-					development. We will provide our consumers non-toxic, organic, less
-					expensive, and less industrialised items.
+					This planet is ours and so the responsibility to save it is ours too.
+					And we believe, sustainability is the key to it all!
+					Thankfully a lot of rural Indian households already produce and use 100% organic products, made from fresh, natural ingredients.
+					During the lockdown, a slew of little companies sprung up from rural areas selling such products, and people reacted positively to them, investigating their offerings and purchasing from them instead of their normal established enterprises.
+					All we need is to connect to our roots and help these brands flourish.
 				</p>
       </div>
 			<h1 className="About__subHeading">About Us</h1>
 			<div className="About__teamDesc">
 				<p className="About__teamText">
-					An initiative to make small business grow. We are a social
-					enterprise with the purpose of aiding small businesses, with a
-					concentration on those in rural areas. We want to do this by
-					providing small businesses with both virtual and physical space to
-					help them grow and thrive. We are especially interested in working
-					with suppliers that do not have the means or reach to sell in big
-					urban regions.
+					A sustainable lifestyle is not a fancy dream anymore. 
+					It is the need of the hour.
+					Our aim is to make it a reality by allowing people to incorporate 100% sustainable, eco-friendly products in their daily lives without paying a premium for them. 
+					<br /><br />
+					Small enterprises are recognised for offering low-cost items because the majority of them are home-grown and do not require expensive inputs.
+					We want to highlight the environmentally conscious small enterprises that have emerged from rural regions.
+					These folks are unable to access metro cities for a variety of reasons.
+					This will also be our contribution to the Made in India programme, which encourages rural development.
+					Moreover, we understand how important it is for individuals to use products that are free of hazardous chemicals, thus we provide cruelty-free goods devoid of synthetic scents.
 				</p>
         <Image src={P5} alt="" className="About__teamImage" />
 			</div>
