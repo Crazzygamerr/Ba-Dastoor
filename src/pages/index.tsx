@@ -14,6 +14,25 @@ import { NextPage } from "next";
 
 const Home: NextPage = () => {
 	
+	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		
+		// use e to get the values of the form
+		const email = (e.target as any).email.value;
+		const name = (e.target as any).name.value;
+		const message = (e.target as any).message.value;
+		
+		if (email && name && message) {
+			const encodedEmail = encodeURIComponent(email);
+			const encodedName = encodeURIComponent(name);
+			const encodedMessage = encodeURIComponent(message);
+			
+			window.open(`https://wa.me/919870470405/?text=Name: ${encodedName}%0AEmail: ${encodedEmail}%0AMessage: ${encodedMessage}`, "_blank");
+		} else {
+			alert("Please fill all the fields");
+		}
+	};
+	
 	return (
 		<div className="Landing">
 			<Head>
@@ -61,12 +80,12 @@ const Home: NextPage = () => {
 			</div>
 			
 			<div className="Landing__contact">
-				<form className="Landing__form">
+				<form className="Landing__form" onSubmit={onSubmit}>
 					<h3 className="Landing__title">Contact Us</h3>
 					<p className="Landing__subtitle">How can we help you?</p>
-					<input type="text" placeholder="Name" />
-					<input type="text" placeholder="Email " />
-					<input type="text" placeholder="Message " />
+					<input type="text" placeholder="Name" name="name"/>
+					<input type="text" placeholder="Email " name="email" />
+					<input type="text" placeholder="Message " name="message" />
 					<button type="submit" className="Landing__submit">
 						Submit
 					</button>

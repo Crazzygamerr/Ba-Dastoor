@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import { BsInstagram, BsLinkedin, BsTwitter, BsEnvelope } from "react-icons/bs";
+import { BsLinkedin, BsEnvelope, BsWhatsapp } from "react-icons/bs";
 
 export default function Footer() {
 	return (
@@ -9,8 +9,8 @@ export default function Footer() {
 				BaDastoor
 			</h1>
 			<div className="Footer__links">
-				<a href="https://www.instagram.com/badastoor/" target="_blank" rel="noreferrer">
-					<BsInstagram color="white" size={30} />
+				<a href="https://wa.me/919870470405" target="_blank" rel="noreferrer">
+					<BsWhatsapp color="white" size={30} />
 				</a>
 				<a href="mailto:dastoor.ba.in@gmail.com" target="_blank" rel="noreferrer">
 					<BsEnvelope color="white" size={30} />
