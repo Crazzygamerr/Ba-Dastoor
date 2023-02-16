@@ -6,7 +6,7 @@ import P5 from "../../public/5.jpeg";
 import Vani from "../../public/Vani.png";
 import Ria from "../../public/ria.jpg";
 import Amogh from "../../public/amogh.jpg";
-import Ananya from "../../public/ananya.jpeg";
+import Ananya from "../../public/ananya.jpg";
 import Anirudh from "../../public/aniruddh.jpeg";
 import Ashna from "../../public/ashna.jpg";
 import Image, { StaticImageData } from "next/image";
@@ -27,14 +27,14 @@ export default function About() {
 			name: "Ashna Singhal",
 			designation: "CMO",
 			image: Ashna,
-			href: "/ashna.jpeg",
+			href: "/ashna.jpg",
 			style: { objectFit: "contain" }
 		},
 		{
 			name: "Ananya Bhatnagar",
 			designation: "COO",
 			image: Ananya,
-			href: "/ananya.jpeg",
+			href: "/ananya.jpg",
 			style: { objectFit: "contain" }
 		},
 		{
