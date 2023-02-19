@@ -1,27 +1,17 @@
 import React, { useEffect } from "react";
-import { NextPage } from "next";
+import { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Head from "next/head";
 import "@/styles/routes/shop.scss"
-import { db, storage } from "@/utils/firebase";
+import { db } from "@/utils/firebase";
 import type { ProductItem } from "@/types/firebase";
-import { collection, getDocs, setDoc, doc } from "firebase/firestore";
-import { ref, list, getDownloadURL } from "firebase/storage";
+import { collection, getDocs } from "firebase/firestore";
+import { getServerSession } from "next-auth";
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 	
-	// const getImages = async () => {
-	// 	const imageList = new Map<string, string>();
-	// 	const listRef = ref(storage, "/product-images");
-	// 	const listResult = await list(listRef);
-	// 	listResult.items.forEach(async (itemRef) => {
-	// 		const url = await getDownloadURL(itemRef);
-	// 		imageList.set(itemRef.name, url);
-	// 	});
-	// 	return imageList;
-	// }
-	// const imageList: Map<string, string> = await getImages();
-	// console.log(imageList);
+	const session = await getServerSession(context.req);
+	
 	
 	const productCol = collection(db, "products");
 	const productSnapshot = await getDocs(productCol);

@@ -77,12 +77,16 @@ function Navbar({
 			<div className="Navbar__auth">
 				{session ? (
 					<>
-						<Image
-							alt=""
-							loading="lazy"
-							src={Cart}
-							className="Navbar__cart"
-						/>
+						<Link
+							href="/cart"
+							className="Navbar__cartLink">
+							<Image
+								alt=""
+								loading="lazy"
+								src={Cart}
+								className="Navbar__cart"
+							/>
+						</Link>
 						<Image
 							alt=""
 							loading="lazy"
